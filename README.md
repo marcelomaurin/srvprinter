@@ -136,7 +136,7 @@ pip install --upgrade -r requirements.txt
 
 ## -- **Créditos**
 - **Autor:** [Marcelo Maurin](https://github.com/marcelomaurin)
-- **Licença:** MIT
+- **Licença:** https://maurinsoft.com.br/plano-de-negocios-customizacao-de-software-open-source/
 - **GitHub:** [Repositório do Projeto](https://github.com/marcelomaurin/srvprinter)
 
 ---

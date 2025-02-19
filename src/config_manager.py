@@ -1,18 +1,22 @@
 import configparser
 import os
+import platform
 
 # Obtém o diretório onde o script está localizado
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CONFIG_FILE = os.path.join(BASE_DIR, "serial.cfg")
 
-# Valores padrão
+# Detecta o sistema operacional
+IS_WINDOWS = platform.system() == "Windows"
+
+# Definir valores padrão baseados no sistema operacional
 DEFAULT_CONFIG = {
     "GENERAL": {
-        "log_file": "/var/log/thermal_printer.log",
+        "log_file": "C:\\srvprinter\\logs\\thermal_printer.log" if IS_WINDOWS else "/var/log/thermal_printer.log",
         "baud_rate": "9600",
-        "serial_port": "/dev/ttyUSB0",
+        "serial_port": "COM3" if IS_WINDOWS else "/dev/ttyUSB0",
         "host": "0.0.0.0",
-        "port": "8102", 
+        "port": "8102",
         "debug": "True"
     }
 }
