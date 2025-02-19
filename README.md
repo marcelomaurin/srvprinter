@@ -1,59 +1,59 @@
-# - Servidor de Impressora T�rmica via Web API
+# 🖨️ Servidor de Impressora Térmica via Web API
 
-Este projeto implementa um **servidor Web API** para controlar uma **impressora t�rmica** via protocolo **ESC/POS**. Ele recebe comandos via HTTP e os encaminha para a impressora conectada � porta serial.
+Este projeto implementa um **servidor Web API** para controlar uma **impressora térmica** via protocolo **ESC/POS**. Ele recebe comandos via HTTP e os encaminha para a impressora conectada à porta serial.
 
-Reposit�rio: [github.com/marcelomaurin/srvprinter](https://github.com/marcelomaurin/srvprinter)
+Repositório: [github.com/marcelomaurin/srvprinter](https://github.com/marcelomaurin/srvprinter)
 
 ---
 
-## - Instala��o
+## 📥 Instalação
 
-### - **Linux**
-1- Clone o reposit�rio:
+### 🐧 **Linux**
+1️⃣ Clone o repositório:
    ```sh
    git clone https://github.com/marcelomaurin/srvprinter.git
    cd srvprinter/src
    ```
 
-2- Instale as depend�ncias:
+2️⃣ Instale as dependências:
    ```sh
    make install
    ```
 
-3- Inicie o servidor:
+3️⃣ Inicie o servidor:
    ```sh
    make start
    ```
 
-4- Para executar manualmente:
+4️⃣ Para executar manualmente:
    ```sh
    ./srvprinter.sh
    ```
 
 ---
 
-### - **Windows**
-1- Clone o reposit�rio:
+### 🖥️ **Windows**
+1️⃣ Clone o repositório:
    ```sh
    git clone https://github.com/marcelomaurin/srvprinter.git
    cd srvprinter/src
    ```
 
-2- Instale as depend�ncias:
+2️⃣ Instale as dependências:
    ```sh
    pip install -r requirements.txt
    ```
 
-3- Execute o servidor:
+3️⃣ Execute o servidor:
    ```sh
    srvprinter.bat
    ```
 
 ---
 
-## - Uso da API
+## 📡 Uso da API
 
-### - **Verificar status da impressora**
+### 🔹 **Verificar status da impressora**
 ```sh
 curl http://localhost:8102/status
 ```
@@ -65,33 +65,33 @@ curl http://localhost:8102/status
 }
 ```
 
-### - **Enviar um texto para impress�o**
+### 🔹 **Enviar um texto para impressão**
 ```sh
-curl -X POST http://localhost:8102/print      -H "Content-Type: application/json"      -d '{"command": "TEXT:Ol� Mundo!|32|center"}'
+curl -X POST http://localhost:8102/print      -H "Content-Type: application/json"      -d '{"command": "TEXT:Olá Mundo!|32|center"}'
 ```
 
-### - **Imprimir c�digo de barras**
+### 🔹 **Imprimir código de barras**
 ```sh
 curl -X POST http://localhost:8102/print      -H "Content-Type: application/json"      -d '{"command": "BARCODE:123456789012"}'
 ```
 
-### - **Imprimir um QR Code**
+### 🔹 **Imprimir um QR Code**
 ```sh
 curl -X POST http://localhost:8102/print      -H "Content-Type: application/json"      -d '{"command": "QRCODE:https://github.com"}'
 ```
 
 ---
 
-## - **Protocolo de Comunica��o**
+## 🔄 **Protocolo de Comunicação**
 
 Os comandos enviados seguem o seguinte formato:
 
-| Comando   | Descri��o |
+| Comando   | Descrição |
 |-----------|----------|
 | `TEXT:<texto>|<colunas>|<alinhamento>` | Imprime um texto formatado |
 | `BIGTXT:<texto>` | Imprime um texto grande e centralizado |
 | `MICROTXT:<texto>` | Imprime um texto pequeno |
-| `BARCODE:<c�digo>` | Imprime um c�digo de barras (EAN13) |
+| `BARCODE:<código>` | Imprime um código de barras (EAN13) |
 | `QRCODE:<link>` | Imprime um QR Code |
 | `IMAGE:<caminho>` | Imprime uma imagem |
 | `PICCUT:PARTIAL` | Corta parcialmente o papel |
@@ -99,13 +99,16 @@ Os comandos enviados seguem o seguinte formato:
 
 ---
 
-## - **Configura��o (`serial.cfg`)**
+## ⚙️ **Configuração (`serial.cfg`)**
 
-O arquivo `serial.cfg` define os par�metros do servidor e est� localizado na **pasta `src`**:
+O arquivo `serial.cfg` define os parâmetros do servidor e está localizado na **pasta `src`**.
 
+Agora, o sistema reconhece automaticamente se está sendo executado no **Linux** ou **Windows**, ajustando as configurações corretamente.
+
+### 🐧 **Configuração Padrão no Linux**
 ```ini
 [GENERAL]
-log_file = /var/log/thermal_printer.log 
+log_file = /var/log/thermal_printer.log
 baud_rate = 9600
 serial_port = /dev/ttyUSB0
 host = 0.0.0.0
@@ -113,31 +116,44 @@ port = 8102
 debug = True
 ```
 
+### 🖥️ **Configuração Padrão no Windows**
+```ini
+[GENERAL]
+log_file = C:\srvprinter\logs\thermal_printer.log
+baud_rate = 9600
+serial_port = COM3
+host = 0.0.0.0
+port = 8102
+debug = True
+```
+
+Se necessário, você pode editar manualmente esses valores no arquivo `serial.cfg`.
+
 ---
 
-## - **Como Parar o Servidor**
+## 🛑 **Como Parar o Servidor**
 No **Linux/macOS**, pressione `CTRL + C`.  
 No **Windows**, feche a janela do terminal.
 
 ---
 
-## - **Manuten��o**
+## 🛠️ **Manutenção**
 Para **limpar** o ambiente:
 ```sh
 make clean
 ```
 
-Para **atualizar as depend�ncias**:
+Para **atualizar as dependências**:
 ```sh
 pip install --upgrade -r requirements.txt
 ```
 
 ---
 
-## -- **Cr�ditos**
+## 👨‍💻 **Créditos**
 - **Autor:** [Marcelo Maurin](https://github.com/marcelomaurin)
-- **Licen�a:** https://maurinsoft.com.br/plano-de-negocios-customizacao-de-software-open-source/
-- **GitHub:** [Reposit�rio do Projeto](https://github.com/marcelomaurin/srvprinter)
+- **Licença:** MIT
+- **GitHub:** [Repositório do Projeto](https://github.com/marcelomaurin/srvprinter)
 
 ---
-- **Agora voc� pode imprimir diretamente via API!** -
+🚀 **Agora você pode imprimir diretamente via API!** 🚀
