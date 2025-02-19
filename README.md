@@ -150,10 +150,68 @@ pip install --upgrade -r requirements.txt
 
 ---
 
-## 👨‍💻 **Créditos**
-- **Autor:** [Marcelo Maurin](https://github.com/marcelomaurin)
-- **Licença:** https://maurinsoft.com.br/plano-de-negocios-customizacao-de-software-open-source/
-- **GitHub:** [Repositório do Projeto](https://github.com/marcelomaurin/srvprinter)
+## 👨‍💻 **Licença**
+Para mais detalhes sobre a personalização e uso do software, consulte:  
+🔗 [Plano de Negócios - Customização de Software Open Source](https://maurinsoft.com.br/plano-de-negocios-customizacao-de-software-open-source/)
 
 ---
+
 🚀 **Agora você pode imprimir diretamente via API!** 🚀
+
+---
+
+# 🌍 **English Version**
+
+This project provides a **Web API server** to control a **thermal printer** via **ESC/POS** protocol. It receives commands via HTTP and sends them to the printer connected via serial port.
+
+Repository: [github.com/marcelomaurin/srvprinter](https://github.com/marcelomaurin/srvprinter)
+
+### 📥 **Installation**
+#### 🐧 **Linux**
+```sh
+git clone https://github.com/marcelomaurin/srvprinter.git
+cd srvprinter/src
+make install
+make start
+```
+
+#### 🖥️ **Windows**
+```sh
+git clone https://github.com/marcelomaurin/srvprinter.git
+cd srvprinter/src
+pip install -r requirements.txt
+srvprinter.bat
+```
+
+### 📜 **License**
+For more details about software customization and usage, visit:  
+🔗 [Business Plan - Open Source Software Customization](https://maurinsoft.com.br/plano-de-negocios-customizacao-de-software-open-source/)
+
+---
+
+# 🌎 **Versión en Español**
+
+Este proyecto implementa un **servidor Web API** para controlar una **impresora térmica** mediante el protocolo **ESC/POS**. Recibe comandos HTTP y los envía a la impresora conectada a un puerto serial.
+
+Repositorio: [github.com/marcelomaurin/srvprinter](https://github.com/marcelomaurin/srvprinter)
+
+### 📥 **Instalación**
+#### 🐧 **Linux**
+```sh
+git clone https://github.com/marcelomaurin/srvprinter.git
+cd srvprinter/src
+make install
+make start
+```
+
+#### 🖥️ **Windows**
+```sh
+git clone https://github.com/marcelomaurin/srvprinter.git
+cd srvprinter/src
+pip install -r requirements.txt
+srvprinter.bat
+```
+
+### 📜 **Licencia**
+Para más detalles sobre la personalización y el uso del software, consulte:  
+🔗 [Plan de Negocios - Personalización de Software Open Source](https://maurinsoft.com.br/plano-de-negocios-customizacao-de-software-open-source/)
