@@ -121,7 +121,7 @@ No **Windows**, feche a janela do terminal.
 
 ---
 
-## -? **Manutenção**
+## - **Manutenção**
 Para **limpar** o ambiente:
 ```sh
 make clean
